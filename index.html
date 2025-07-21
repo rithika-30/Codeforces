@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeforces</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <nav>
+        <button class="nav-btn">Home</button>
+        <button class="nav-btn">Compare</button>
+        <button class="nav-btn">Virtual Rating</button>
+        <button class="nav-btn">Feedback</button>
+        <label class="switch">
+            <input type="checkbox" id="dark-toggle">
+            <span class="slider"></span>
+        </label>
+    </nav>
+    <section class="header">
+        <h1>CodeGraphIQ</h1>
+        <p class="para">Visualize your stats, submissions, languages, and more!</p>
+        <form id="user-form">
+            <input id="handle-input" type="text" placeholder="Enter Codeforces handle" required />
+            <button type="submit" id="submit-btn">Visualize</button>
+        </form>
+    </section>
+    <div id="loading-indicator">
+         <img src="loader.gif" alt="Loading...">
+    </div>
+    <section id="dashboard">
+        <h2 id="displayed-user" class="section-title"></h2>
+        <div class="cards-container"></div>
+        
+         <div class="chart-section">
+            <div id="verdict-pie" style="width: 100%; max-width: 600px"></div>
+             <div id="lang-pie" style="width: 100%; max-width: 600px"></div>
+        </div>
+         <div id="rating-bar" style="margin-top: 40px"></div>
+        <div id="submission-heatmap" style="margin-top: 40px"></div>
+
+        <div id="recent-activity" class="pattern-block">
+            <h3>📌 Your Recent Problem Solving Trail</h3>
+            <div id="pattern-timeline">
+        </div>
+        </div>
+  </section>
+
+  <div id="toast"></div>
+  <footer>
+    <p>&copy; 2025 Codeforces Visualizer by Rithika Jella</p>
+  </footer>
+
+   <script>
+    google.charts.load("current", { packages: ["corechart", "calendar"] });
+  </script>
+  <script src="main.js"></script>
+
+</body>
+</html>
